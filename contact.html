@@ -43,83 +43,43 @@
                 <span class="word-2">LA CONQUISTA</span>
             </h1>
             <p class="hero-description">
-                Comienza tu propia conquista digital. Contáctanos y planifiquemos tu estrategia.
+                Contacta al equipo en Discord y únete a nuestra legión de guerreros digitales.
             </p>
         </div>
     </section>
 
-    <!-- Formulario de Contacto -->
+    <!-- Sección de Discord -->
     <section class="features">
         <div class="container">
-            <h2 class="section-title">Envía tu Mensaje de Guerra</h2>
+            <h2 class="section-title">Contacta al Equipo en Discord</h2>
             
-            <div class="contact-container">
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Nombre del Guerrero</label>
-                            <input type="text" id="name" name="name" required>
+            <div class="discord-contact-container">
+                <div class="discord-card">
+                    <div class="discord-icon">
+                        ⚔️
+                    </div>
+                    <h3>Únete a Nuestra Legión</h3>
+                    <p>Contacta directamente con nuestro equipo de guerreros digitales en Discord. Aquí planificamos todas nuestras conquistas y estrategias.</p>
+                    
+                    <div class="discord-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">🏰</span>
+                            <span>Contacto directo con el equipo</span>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Correo de Batalla</label>
-                            <input type="email" id="email" name="email" required>
+                        <div class="feature-item">
+                            <span class="feature-icon">⚡</span>
+                            <span>Respuesta rápida</span>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="subject">Tipo de Conquista</label>
-                            <select id="subject" name="subject" required>
-                                <option value="">Selecciona tu misión</option>
-                                <option value="web">Desarrollo Web</option>
-                                <option value="mobile">Aplicaciones Móviles</option>
-                                <option value="marketing">Marketing Digital</option>
-                                <option value="consulting">Consultoría</option>
-                                <option value="other">Otra Conquista</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Plan de Batalla</label>
-                            <textarea id="message" name="message" rows="6" placeholder="Describe tu proyecto y objetivos de conquista..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary">Iniciar Conquista</button>
-                    </form>
-                </div>
-                
-                <div class="contact-info">
-                    <h3>Información de Contacto</h3>
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div>
-                            <strong>Email</strong>
-                            <p>conquista@attilastudios.com</p>
+                        <div class="feature-item">
+                            <span class="feature-icon">🛡️</span>
+                            <span>Comunidad activa 24/7</span>
                         </div>
                     </div>
                     
-                    <div class="contact-item">
-                        <div class="contact-icon">⚔️</div>
-                        <div>
-                            <strong>Discord</strong>
-                            <p>Únete a nuestra legión</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">🏰</div>
-                        <div>
-                            <strong>Fortaleza Digital</strong>
-                            <p>En el reino del internet</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">⏰</div>
-                        <div>
-                            <strong>Horario de Batalla</strong>
-                            <p>24/7 - Siempre en conquista</p>
-                        </div>
-                    </div>
+                    <a href="https://discord.gg/3DbtkNVATP" target="_blank" class="btn btn-primary discord-btn">
+                        <span class="btn-icon">🎮</span>
+                        Entrar al Discord
+                    </a>
                 </div>
             </div>
         </div>
@@ -157,114 +117,111 @@
     </footer>
 
     <style>
-        .contact-container {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
+        .discord-contact-container {
+            display: flex;
+            justify-content: center;
             margin-top: 3rem;
         }
         
-        .contact-form {
+        .discord-card {
             background: 
                 linear-gradient(135deg, 
                     rgba(60, 52, 42, 0.9) 0%,
                     rgba(42, 36, 30, 0.95) 100%
                 );
-            padding: 2.5rem;
-            border-radius: 8px;
+            padding: 3rem;
+            border-radius: 12px;
             border: 2px solid rgba(212, 175, 55, 0.3);
             box-shadow: 
                 0 8px 25px rgba(0, 0, 0, 0.6),
                 inset 0 1px 0 rgba(212, 175, 55, 0.1);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            color: var(--golden-yellow);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            font-family: 'Cinzel', serif;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid rgba(212, 175, 55, 0.3);
-            border-radius: 4px;
-            background: rgba(31, 22, 18, 0.8);
-            color: var(--parchment);
-            font-family: 'Cinzel', serif;
-            cursor: none !important;
-            transition: border-color 0.3s ease;
-        }
-        
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--golden-yellow);
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
-        }
-        
-        .contact-info {
-            background: 
-                linear-gradient(135deg, 
-                    rgba(60, 52, 42, 0.9) 0%,
-                    rgba(42, 36, 30, 0.95) 100%
-                );
-            padding: 2.5rem;
-            border-radius: 8px;
-            border: 2px solid rgba(212, 175, 55, 0.3);
-            box-shadow: 
-                0 8px 25px rgba(0, 0, 0, 0.6),
-                inset 0 1px 0 rgba(212, 175, 55, 0.1);
-            height: fit-content;
-        }
-        
-        .contact-info h3 {
-            color: var(--golden-yellow);
-            margin-bottom: 2rem;
-            font-family: 'Cinzel', serif;
             text-align: center;
+            max-width: 600px;
+            width: 100%;
         }
         
-        .contact-item {
+        .discord-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .discord-card h3 {
+            color: var(--golden-yellow);
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .discord-card p {
+            color: var(--parchment);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        
+        .discord-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .feature-item {
             display: flex;
             align-items: center;
-            margin-bottom: 1.5rem;
-            padding: 1rem;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
             background: rgba(31, 22, 18, 0.5);
-            border-radius: 4px;
+            border-radius: 6px;
             border: 1px solid rgba(139, 0, 0, 0.3);
-        }
-        
-        .contact-icon {
-            font-size: 1.5rem;
-            margin-right: 1rem;
-            width: 40px;
-        }
-        
-        .contact-item strong {
-            color: var(--crimson);
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-        
-        .contact-item p {
             color: var(--parchment);
-            margin: 0;
+        }
+        
+        .feature-icon {
+            font-size: 1.2rem;
+        }
+        
+        .discord-btn {
+            font-size: 1.2rem;
+            padding: 1rem 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .discord-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 6px 20px rgba(212, 175, 55, 0.3),
+                0 0 20px rgba(139, 0, 0, 0.4);
+        }
+        
+        .btn-icon {
+            font-size: 1.1rem;
         }
         
         @media (max-width: 768px) {
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            .discord-card {
+                padding: 2rem;
+                margin: 0 1rem;
+            }
+            
+            .discord-card h3 {
+                font-size: 1.5rem;
+            }
+            
+            .discord-features {
+                gap: 0.75rem;
+            }
+            
+            .feature-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
             }
         }
     </style>
