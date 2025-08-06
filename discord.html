@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord - Attila Studios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Partículas de sangre animadas -->
+    <div class="blood-particles"></div>
+    
+    <!-- Header con navegación -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <h1 class="logo-text">ATTILA STUDIOS</h1>
+                <span class="logo-subtitle">Atila arrasaba tierras. Nosotros arrasamos límites.</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="services.html" class="nav-link">Servicios</a></li>
+                <li><a href="team.html" class="nav-link">Equipo</a></li>
+                <li><a href="discord.html" class="nav-link active">Discord</a></li>
+                <li><a href="contact.html" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="word-1">ÚNETE A</span>
+                <span class="word-2">NUESTRA</span>
+                <span class="word-3">LEGIÓN</span>
+            </h1>
+            <p class="hero-description">
+                Forma parte de la comunidad de guerreros digitales. Comparte estrategias y forja alianzas poderosas.
+            </p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">Unirse al Discord</a>
+            </div>
+        </div>
+        
+        <!-- Efecto de espadas cruzadas -->
+        <div class="swords-container">
+            <div class="sword sword-1"></div>
+            <div class="sword sword-2"></div>
+        </div>
+    </section>
+
+    <!-- Información del Discord -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">¿Por qué unirse a nuestra legión?</h2>
+            <div class="discord-grid">
+                <div class="discord-card">
+                    <div class="discord-icon">🗡️</div>
+                    <h3>Estrategias de Guerra</h3>
+                    <p>Comparte y aprende tácticas digitales con otros conquistadores.</p>
+                </div>
+                
+                <div class="discord-card">
+                    <div class="discord-icon">🛡️</div>
+                    <h3>Soporte Directo</h3>
+                    <p>Acceso directo a nuestro equipo para resolver dudas y recibir ayuda.</p>
+                </div>
+                
+                <div class="discord-card">
+                    <div class="discord-icon">👥</div>
+                    <h3>Comunidad Activa</h3>
+                    <p>Conecta con otros guerreros digitales y forma alianzas poderosas.</p>
+                </div>
+                
+                <div class="discord-card">
+                    <div class="discord-icon">🏆</div>
+                    <h3>Eventos Exclusivos</h3>
+                    <p>Participa en eventos especiales y competencias de conquista.</p>
+                </div>
+            </div>
+            
+            <div class="discord-cta">
+                <h3>¿Listo para la batalla?</h3>
+                <p>Únete a nuestra fortaleza Discord</p>
+                <a href="#" class="btn btn-primary">Entrar al Discord</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ATTILA STUDIOS</h3>
+                    <p>Conquistando el mundo digital, un proyecto a la vez.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="services.html">Servicios</a></li>
+                        <li><a href="team.html">Equipo</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="discord.html" class="social-link">Discord</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Attila Studios. Todos los derechos conquistados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .discord-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 4rem;
+        }
+        
+        .discord-card {
+            background: 
+                linear-gradient(135deg, 
+                    rgba(60, 52, 42, 0.9) 0%,
+                    rgba(42, 36, 30, 0.95) 100%
+                );
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+            cursor: none !important;
+            box-shadow: 
+                0 8px 25px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(212, 175, 55, 0.1);
+            transition: all 0.4s ease;
+        }
+        
+        .discord-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--golden-yellow);
+            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.3);
+        }
+        
+        .discord-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .discord-card h3 {
+            color: var(--golden-yellow);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-family: 'Cinzel', serif;
+        }
+        
+        .discord-card p {
+            color: var(--parchment);
+            line-height: 1.6;
+        }
+        
+        .discord-cta {
+            text-align: center;
+            background: 
+                linear-gradient(135deg, 
+                    rgba(139, 0, 0, 0.2) 0%,
+                    rgba(212, 175, 55, 0.1) 100%
+                );
+            padding: 3rem;
+            border-radius: 12px;
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(212, 175, 55, 0.2);
+        }
+        
+        .discord-cta h3 {
+            color: var(--golden-yellow);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-family: 'Cinzel', serif;
+        }
+        
+        .discord-cta p {
+            color: var(--parchment);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+
+    <script src="script.js"></script>
+</body>
+</html>

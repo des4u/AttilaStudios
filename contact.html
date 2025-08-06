@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Attila Studios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Partículas de sangre animadas -->
+    <div class="blood-particles"></div>
+    
+    <!-- Header con navegación -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <h1 class="logo-text">ATTILA STUDIOS</h1>
+                <span class="logo-subtitle">Atila arrasaba tierras. Nosotros arrasamos límites.</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="services.html" class="nav-link">Servicios</a></li>
+                <li><a href="team.html" class="nav-link">Equipo</a></li>
+                <li><a href="discord.html" class="nav-link">Discord</a></li>
+                <li><a href="contact.html" class="nav-link active">Contacto</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="height: 60vh;">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="word-1">ÚNETE A</span>
+                <span class="word-2">LA CONQUISTA</span>
+            </h1>
+            <p class="hero-description">
+                Comienza tu propia conquista digital. Contáctanos y planifiquemos tu estrategia.
+            </p>
+        </div>
+    </section>
+
+    <!-- Formulario de Contacto -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Envía tu Mensaje de Guerra</h2>
+            
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nombre del Guerrero</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Correo de Batalla</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Tipo de Conquista</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Selecciona tu misión</option>
+                                <option value="web">Desarrollo Web</option>
+                                <option value="mobile">Aplicaciones Móviles</option>
+                                <option value="marketing">Marketing Digital</option>
+                                <option value="consulting">Consultoría</option>
+                                <option value="other">Otra Conquista</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Plan de Batalla</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Describe tu proyecto y objetivos de conquista..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Iniciar Conquista</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <strong>Email</strong>
+                            <p>conquista@attilastudios.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">⚔️</div>
+                        <div>
+                            <strong>Discord</strong>
+                            <p>Únete a nuestra legión</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🏰</div>
+                        <div>
+                            <strong>Fortaleza Digital</strong>
+                            <p>En el reino del internet</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div>
+                            <strong>Horario de Batalla</strong>
+                            <p>24/7 - Siempre en conquista</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ATTILA STUDIOS</h3>
+                    <p>Conquistando el mundo digital, un proyecto a la vez.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="services.html">Servicios</a></li>
+                        <li><a href="team.html">Equipo</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="discord.html" class="social-link">Discord</a>
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Attila Studios. Todos los derechos conquistados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .contact-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-form {
+            background: 
+                linear-gradient(135deg, 
+                    rgba(60, 52, 42, 0.9) 0%,
+                    rgba(42, 36, 30, 0.95) 100%
+                );
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 
+                0 8px 25px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(212, 175, 55, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            color: var(--golden-yellow);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-family: 'Cinzel', serif;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 4px;
+            background: rgba(31, 22, 18, 0.8);
+            color: var(--parchment);
+            font-family: 'Cinzel', serif;
+            cursor: none !important;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--golden-yellow);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+        
+        .contact-info {
+            background: 
+                linear-gradient(135deg, 
+                    rgba(60, 52, 42, 0.9) 0%,
+                    rgba(42, 36, 30, 0.95) 100%
+                );
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 
+                0 8px 25px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(212, 175, 55, 0.1);
+            height: fit-content;
+        }
+        
+        .contact-info h3 {
+            color: var(--golden-yellow);
+            margin-bottom: 2rem;
+            font-family: 'Cinzel', serif;
+            text-align: center;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(31, 22, 18, 0.5);
+            border-radius: 4px;
+            border: 1px solid rgba(139, 0, 0, 0.3);
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            width: 40px;
+        }
+        
+        .contact-item strong {
+            color: var(--crimson);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        
+        .contact-item p {
+            color: var(--parchment);
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+
+    <script src="script.js"></script>
+</body>
+</html>

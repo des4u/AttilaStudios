@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Attila Studios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Partículas de sangre animadas -->
+    <div class="blood-particles"></div>
+    
+    <!-- Header con navegación -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <h1 class="logo-text">ATTILA STUDIOS</h1>
+                <span class="logo-subtitle">Atila arrasaba tierras. Nosotros arrasamos límites.</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="services.html" class="nav-link active">Servicios</a></li>
+                <li><a href="team.html" class="nav-link">Equipo</a></li>
+                <li><a href="discord.html" class="nav-link">Discord</a></li>
+                <li><a href="contact.html" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="height: 60vh;">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="word-1">NUESTROS</span>
+                <span class="word-2">SERVICIOS</span>
+            </h1>
+            <p class="hero-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+        </div>
+    </section>
+
+    <!-- Servicios Principales -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Arsenal de Servicios Digitales</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>Desarrollo de bots de Discord</h3>
+                    <p>Automatiza tu comunidad y potencia tu servidor con bots personalizados.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Desarrollo de servidores de Minecraft</h3>
+                    <p>Crea tu propio mundo, domina el juego y conquista a tus rivales.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏹</div>
+                    <h3>Consultoría digital</h3>
+                    <p>Te guiamos en tu conquista digital, optimizando tus recursos y estrategias.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎉</div>
+                    <h3>Desarrollo de eventos masivos</h3>
+                    <p>Organiza y gestiona eventos épicos para tu comunidad o marca.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧩</div>
+                    <h3>Desarrollo de plugins y texturas de Minecraft</h3>
+                    <p>Personaliza tu servidor con plugins únicos y texturas exclusivas.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>Desarrollo de páginas web y servicios backend</h3>
+                    <p>Soluciones web robustas y seguras para tu proyecto digital.</p>
+                </div>
+            </div>
+            <div style="margin-top:2rem;text-align:center;font-size:1.2rem;color:var(--golden-yellow);font-family:'Cinzel',serif;">
+                <strong>¡Calidad sobre cantidad!</strong>
+            </div>
+            <div style="margin-top:3rem;">
+                <h2 class="section-title" style="font-size:2rem;">Trabajos Anteriores</h2>
+                <div style="background:rgba(60,52,42,0.8);padding:2rem;border-radius:8px;color:var(--parchment);font-size:1.1rem;">
+                    Conquistamos a los rivales en 4 naciones Aradir, evento de 500+ jugadores para youtuber de más de 2 millones de seguidores.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ATTILA STUDIOS</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="services.html">Servicios</a></li>
+                        <li><a href="team.html">Equipo</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="discord.html" class="social-link">Discord</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Attila Studios. Todos los derechos conquistados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: var(--lighter-gray);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--crimson), var(--golden-yellow));
+            z-index: -1;
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 0.4s ease;
+        }
+        
+        .service-card:hover::before {
+            transform: scaleY(1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--golden-yellow);
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4);
+        }
+        
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .service-card h3 {
+            color: var(--golden-yellow);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .service-card p {
+            color: var(--white);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .service-features li {
+            color: var(--white);
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .service-features li::before {
+            content: '⚡';
+            position: absolute;
+            left: 0;
+            color: var(--crimson);
+        }
+    </style>
+
+    <script src="script.js"></script>
+</body>
+</html>

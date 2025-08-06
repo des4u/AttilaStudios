@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo - Attila Studios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Partículas de sangre animadas -->
+    <div class="blood-particles"></div>
+    
+    <!-- Header con navegación -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <h1 class="logo-text">ATTILA STUDIOS</h1>
+                <span class="logo-subtitle">Atila arrasaba tierras. Nosotros arrasamos límites.</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="services.html" class="nav-link">Servicios</a></li>
+                <li><a href="team.html" class="nav-link active">Equipo</a></li>
+                <li><a href="discord.html" class="nav-link">Discord</a></li>
+                <li><a href="contact.html" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="height: 60vh;">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="word-1">NUESTROS</span>
+                <span class="word-2">GUERREROS</span>
+            </h1>
+            <p class="hero-description">
+                Los conquistadores digitales que lideran cada batalla hacia el éxito.
+            </p>
+        </div>
+    </section>
+
+    <!-- Equipo -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Los Generales de la Conquista</h2>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">⚔️</div>
+                    <h3>Desau (Saul Didier Perez Rivas)</h3>
+                    <p class="team-role">Dirección creativa y ejecutiva</p>
+                    <p>Especializado en traer y amplificar tus ideas. Lidera la visión y ejecución del estudio.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">🛡️</div>
+                    <h3>Arthur</h3>
+                    <p class="team-role">Dirección ejecutiva</p>
+                    <p>Especializado en mover los hilos del juego. Mantén tu servicio limpio de sangre con su gestión.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">⚡</div>
+                    <h3>Kesp</h3>
+                    <p class="team-role">Optimización de servicios</p>
+                    <p>Optimiza tus recursos y procesos. No te sientas aturdido en combate, Kesp te respalda.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">🏹</div>
+                    <h3>Teo7holkaste</h3>
+                    <p class="team-role">Diseño y frontend</p>
+                    <p>Diseña tus ideas y las lleva al campo de batalla digital. Frontend del estudio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ATTILA STUDIOS</h3>
+                    <p>Conquistando el mundo digital, un proyecto a la vez.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="services.html">Servicios</a></li>
+                        <li><a href="team.html">Equipo</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="discord.html" class="social-link">Discord</a>
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Attila Studios. Todos los derechos conquistados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .team-card {
+            background: 
+                linear-gradient(135deg, 
+                    rgba(60, 52, 42, 0.9) 0%,
+                    rgba(42, 36, 30, 0.95) 100%
+                );
+            padding: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+            cursor: none !important;
+            box-shadow: 
+                0 8px 25px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(212, 175, 55, 0.1);
+            transition: all 0.4s ease;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--golden-yellow);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
+        }
+        
+        .team-avatar {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .team-card h3 {
+            color: var(--golden-yellow);
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+            font-family: 'Cinzel', serif;
+        }
+        
+        .team-role {
+            color: var(--crimson);
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+        
+        .team-card p:last-child {
+            color: var(--parchment);
+            line-height: 1.6;
+        }
+    </style>
+
+    <script src="script.js"></script>
+</body>
+</html>
