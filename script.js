@@ -1,11 +1,16 @@
 // Attila Studios - JavaScript Principal
 document.addEventListener('DOMContentLoaded', function() {
+    document.documentElement.classList.remove('no-js');
     
     // Variables globales
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
     const header = document.querySelector('.header');
+    
+    // Detectar dispositivos móviles para optimizaciones (movido al inicio)
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const isTouch = ('ontouchstart' in window || navigator.maxTouchPoints > 0) && window.innerWidth <= 768;
     
     // Menú móvil toggle
     if (navToggle) {
@@ -26,13 +31,14 @@ document.addEventListener('DOMContentLoaded', function() {
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
-            
-            // Reset del botón hamburguesa
-            const spans = navToggle.querySelectorAll('span');
-            spans.forEach(span => {
-                span.style.transform = '';
-                span.style.opacity = '1';
-            });
+            // Reset del botón hamburguesa solo si existe
+            if (navToggle) {
+                const spans = navToggle.querySelectorAll('span');
+                spans.forEach(span => {
+                    span.style.transform = '';
+                    span.style.opacity = '1';
+                });
+            }
         });
     });
     
@@ -56,17 +62,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Inicializar cards con animación
     const featureCards = document.querySelectorAll('.feature-card');
+    console.log('Inicializando feature cards:', featureCards.length);
+    
     featureCards.forEach((card, index) => {
-        if (isMobile || isTouch) {
-            // En móviles, mostrar las cards inmediatamente
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-            card.style.transition = 'all 0.3s ease';
-        } else {
-            // En desktop, usar animación de entrada
+        // Asegurar que todas las cards sean visibles
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+        card.style.transition = 'all 0.6s ease';
+        
+        if (!isMobile && !isTouch) {
+            // Solo usar animación de entrada en desktop
             card.style.opacity = '0';
             card.style.transform = 'translateY(50px)';
-            card.style.transition = 'all 0.6s ease';
             card.style.transitionDelay = `${index * 0.2}s`;
         }
     });
@@ -74,6 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Ejecutar animación inicial
     setTimeout(() => {
         animateOnScroll();
+        console.log('Animación de scroll ejecutada');
     }, 100);
     
     // Efecto de typing para el título principal
@@ -158,6 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Cursor personalizado medieval
     function createCustomCursor() {
+        console.log('Creando cursor personalizado...');
         const cursor = document.createElement('div');
         cursor.id = 'custom-cursor';
         cursor.style.cssText = `
@@ -177,6 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 inset 0 0 5px rgba(255, 215, 0, 0.3);
         `;
         document.body.appendChild(cursor);
+        console.log('Cursor añadido al DOM');
         
         document.addEventListener('mousemove', (e) => {
             cursor.style.left = e.clientX - 12 + 'px';
@@ -196,252 +206,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 cursor.style.background = 'radial-gradient(circle, #D4AF37 0%, #8B7000 40%, #8B0000 70%, #4A0000 100%)';
             });
         });
+        
+        return cursor;
     }
     
-    // Activar cursor personalizado siempre
-    createCustomCursor();
+    // TODO: Activar preloader (función createPreloader no implementada)
+    // if (document.readyState === 'loading') {
+    //     createPreloader();
+    // }
     
-    // Ocultar cursor del sistema
-    document.body.style.cursor = 'none';
-    document.documentElement.style.cursor = 'none';
+    // TODO: Inicializar audio al primer click del usuario (función initAudio no implementada)
+    // document.addEventListener('click', () => {
+    //     if (!audioContext) {
+    //         initAudio();
+    //     }
+    // }, { once: true });
     
-    // Efecto de sangre al hacer click
-    document.addEventListener('click', function(e) {
-        createBloodSplash(e.clientX, e.clientY);
-    });
-    
-    function createBloodSplash(x, y) {
-        for (let i = 0; i < 6; i++) {
-            const splash = document.createElement('div');
-            splash.style.position = 'fixed';
-            splash.style.width = Math.random() * 8 + 4 + 'px';
-            splash.style.height = splash.style.width;
-            splash.style.background = '#DC143C';
-            splash.style.borderRadius = '50%';
-            splash.style.left = x + 'px';
-            splash.style.top = y + 'px';
-            splash.style.pointerEvents = 'none';
-            splash.style.zIndex = '1000';
-            splash.style.opacity = '0.8';
-            
-            document.body.appendChild(splash);
-            
-            // Animar salpicadura
-            const angle = (Math.PI * 2 * i) / 6;
-            const distance = Math.random() * 50 + 20;
-            const finalX = x + Math.cos(angle) * distance;
-            const finalY = y + Math.sin(angle) * distance;
-            
-            splash.animate([
-                { transform: 'translate(0, 0) scale(1)', opacity: 0.8 },
-                { transform: `translate(${finalX - x}px, ${finalY - y}px) scale(0)`, opacity: 0 }
-            ], {
-                duration: 800,
-                easing: 'ease-out'
-            }).onfinish = () => splash.remove();
-        }
-    }
-    
-    // Contador animado (para estadísticas futuras)
-    function animateCounter(element, target, duration = 2000) {
-        const start = 0;
-        const increment = target / (duration / 16);
-        let current = start;
-        
-        const timer = setInterval(() => {
-            current += increment;
-            element.textContent = Math.floor(current);
-            
-            if (current >= target) {
-                element.textContent = target;
-                clearInterval(timer);
-            }
-        }, 16);
-    }
-    
-    // Efecto de shake en elementos
-    function shake(element, intensity = 5, duration = 500) {
-        const originalPosition = element.style.transform;
-        const startTime = Date.now();
-        
-        function shakeFrame() {
-            const elapsed = Date.now() - startTime;
-            const progress = elapsed / duration;
-            
-            if (progress < 1) {
-                const x = Math.sin(progress * Math.PI * 10) * intensity * (1 - progress);
-                const y = Math.cos(progress * Math.PI * 8) * intensity * (1 - progress);
-                element.style.transform = `translate(${x}px, ${y}px)`;
-                requestAnimationFrame(shakeFrame);
-            } else {
-                element.style.transform = originalPosition;
-            }
-        }
-        
-        shakeFrame();
-    }
-    
-    // Efecto de glitch en texto
-    function glitchEffect(element, duration = 2000) {
-        const originalText = element.textContent;
-        const glitchChars = '!@#$%^&*()_+-={}[]|\\:";\'<>?,./`~';
-        let glitchInterval;
-        
-        function glitch() {
-            let glitchedText = '';
-            for (let i = 0; i < originalText.length; i++) {
-                if (Math.random() < 0.1) {
-                    glitchedText += glitchChars[Math.floor(Math.random() * glitchChars.length)];
-                } else {
-                    glitchedText += originalText[i];
-                }
-            }
-            element.textContent = glitchedText;
-        }
-        
-        glitchInterval = setInterval(glitch, 100);
-        
-        setTimeout(() => {
-            clearInterval(glitchInterval);
-            element.textContent = originalText;
-        }, duration);
-    }
-    
-    // Aplicar efecto glitch al título ocasionalmente
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
-        setInterval(() => {
-            if (Math.random() < 0.1) { // 10% de probabilidad cada 10 segundos
-                glitchEffect(heroTitle, 500);
-            }
-        }, 10000);
-    }
-    
-    // Audio context para efectos de sonido (opcional)
-    let audioContext;
-    
-    function initAudio() {
-        try {
-            audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        } catch (e) {
-            console.log('Audio no soportado');
-        }
-    }
-    
-    function playTone(frequency, duration, volume = 0.1) {
-        if (!audioContext) return;
-        
-        const oscillator = audioContext.createOscillator();
-        const gainNode = audioContext.createGain();
-        
-        oscillator.connect(gainNode);
-        gainNode.connect(audioContext.destination);
-        
-        oscillator.frequency.value = frequency;
-        oscillator.type = 'sine';
-        
-        gainNode.gain.setValueAtTime(volume, audioContext.currentTime);
-        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
-        
-        oscillator.start(audioContext.currentTime);
-        oscillator.stop(audioContext.currentTime + duration);
-    }
-    
-    // Sonidos de guerra al hacer hover en botones
-    buttons.forEach(button => {
-        button.addEventListener('mouseenter', () => {
-            if (audioContext) {
-                playTone(800, 0.1, 0.05); // Sonido sutil de espada
-            }
-        });
-    });
-    
-    // Preloader con animación de espadas
-    function createPreloader() {
-        const preloader = document.createElement('div');
-        preloader.id = 'preloader';
-        preloader.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #000000, #1a1a1a);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            flex-direction: column;
-        `;
-        
-        preloader.innerHTML = `
-            <div style="position: relative; width: 100px; height: 100px; margin-bottom: 20px;">
-                <div class="sword" style="
-                    position: absolute;
-                    width: 80px;
-                    height: 4px;
-                    background: linear-gradient(90deg, #FFD700, #B8860B);
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%) rotate(45deg);
-                    animation: swordSpin 1s linear infinite;
-                "></div>
-                <div class="sword" style="
-                    position: absolute;
-                    width: 80px;
-                    height: 4px;
-                    background: linear-gradient(90deg, #DC143C, #8B0000);
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%) rotate(-45deg);
-                    animation: swordSpin 1s linear infinite reverse;
-                "></div>
-            </div>
-            <h2 style="color: #FFD700; font-family: Arial, sans-serif; font-size: 1.5rem; text-align: center;">
-                ATTILA STUDIOS
-            </h2>
-            <p style="color: #DC143C; font-family: Arial, sans-serif; margin-top: 10px;">
-                Preparando la conquista...
-            </p>
-        `;
-        
-        // Agregar animación CSS
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes swordSpin {
-                0% { transform: translate(-50%, -50%) rotate(45deg); }
-                100% { transform: translate(-50%, -50%) rotate(405deg); }
-            }
-        `;
-        document.head.appendChild(style);
-        
-        document.body.appendChild(preloader);
-        
-        // Remover preloader después de cargar
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                preloader.style.opacity = '0';
-                preloader.style.transition = 'opacity 0.5s ease';
-                setTimeout(() => preloader.remove(), 500);
-            }, 1000);
-        });
-    }
-    
-    // Activar preloader
-    if (document.readyState === 'loading') {
-        createPreloader();
-    }
-    
-    // Inicializar audio al primer click del usuario
-    document.addEventListener('click', () => {
-        if (!audioContext) {
-            initAudio();
-        }
-    }, { once: true });
-    
-    // Detectar dispositivos móviles para optimizaciones
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    console.log('Detección de dispositivo:', { isMobile, isTouch, width: window.innerWidth });
     
     if (isMobile || isTouch) {
         // Desactivar algunas animaciones pesadas en móviles
@@ -528,8 +309,64 @@ document.addEventListener('DOMContentLoaded', function() {
         }, false);
     } else {
         // Efectos completos para desktop
-        createCustomCursor();
         setInterval(createBloodParticle, 2000);
+    }
+    
+    // Crear cursor personalizado para desktop
+    const shouldShowCustomCursor = !isMobile && (!isTouch || window.innerWidth > 1024);
+    
+    if (shouldShowCustomCursor) {
+        // Evitar crear dos veces el cursor
+        if (!document.getElementById('custom-cursor')) {
+            createCustomCursor();
+        }
+        document.body.style.cursor = 'none';
+        document.documentElement.style.cursor = 'none';
+    } else {
+        // Si existe el cursor, ocultarlo en mobile
+        const customCursor = document.getElementById('custom-cursor');
+        if (customCursor) {
+            customCursor.style.display = 'none';
+        }
+    }
+    
+    // Efecto de sangre al hacer click (solo en desktop)
+    if (shouldShowCustomCursor) {
+        document.addEventListener('click', function(e) {
+            createBloodSplash(e.clientX, e.clientY);
+        });
+    }
+    
+    function createBloodSplash(x, y) {
+        for (let i = 0; i < 6; i++) {
+            const splash = document.createElement('div');
+            splash.style.position = 'fixed';
+            splash.style.width = Math.random() * 8 + 4 + 'px';
+            splash.style.height = splash.style.width;
+            splash.style.background = '#DC143C';
+            splash.style.borderRadius = '50%';
+            splash.style.left = x + 'px';
+            splash.style.top = y + 'px';
+            splash.style.pointerEvents = 'none';
+            splash.style.zIndex = '1000';
+            splash.style.opacity = '0.8';
+            
+            document.body.appendChild(splash);
+            
+            // Animar salpicadura
+            const angle = (Math.PI * 2 * i) / 6;
+            const distance = Math.random() * 50 + 20;
+            const finalX = x + Math.cos(angle) * distance;
+            const finalY = y + Math.sin(angle) * distance;
+            
+            splash.animate([
+                { transform: 'translate(0, 0) scale(1)', opacity: 0.8 },
+                { transform: `translate(${finalX - x}px, ${finalY - y}px) scale(0)`, opacity: 0 }
+            ], {
+                duration: 800,
+                easing: 'ease-out'
+            }).onfinish = () => splash.remove();
+        }
     }
     
     // Cerrar menú móvil al hacer click fuera
